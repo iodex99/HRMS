@@ -1592,6 +1592,16 @@ try:
 except ImportError:
     print("Warning: Module 4 (Timesheet) not loaded")
 
+# ==================== MODULE 5: LEAVE MANAGEMENT ====================
+
+# Import and register Module 5 routes
+try:
+    from module5_leave import register_leave_routes
+    if calendar_engine:
+        register_leave_routes(app, db, get_current_user, require_firm_admin, calendar_engine)
+except ImportError:
+    print("Warning: Module 5 (Leave) not loaded")
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8001)
