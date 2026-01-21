@@ -1571,10 +1571,22 @@ except ImportError:
 
 # Import and register Module 3 routes
 try:
-    from module3_calendar import register_calendar_routes
+    from module3_calendar import register_calendar_routes, CalendarResolutionEngine
+    calendar_engine = CalendarResolutionEngine(db)
     register_calendar_routes(app, db, get_current_user, require_firm_admin)
 except ImportError:
     print("Warning: Module 3 (Calendar) not loaded")
+    calendar_engine = None
+
+# ==================== MODULE 4: TIMESHEET ====================
+
+# Import and register Module 4 routes
+try:
+    from module4_timesheet import register_timesheet_routes
+    if calendar_engine:
+        register_timesheet_routes(app, db, get_current_user, require_firm_admin, calendar_engine)
+except ImportError:
+    print("Warning: Module 4 (Timesheet) not loaded")
 
 if __name__ == "__main__":
     import uvicorn
