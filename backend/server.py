@@ -1550,6 +1550,15 @@ async def get_audit_logs(
         "logs": logs
     }
 
+# ==================== MODULE 2: MASTER DATA MANAGEMENT ====================
+
+# Import and register Module 2 routes
+try:
+    from module2_masters import register_master_routes
+    register_master_routes(app, db, get_current_user, require_firm_admin)
+except ImportError:
+    print("Warning: Module 2 (Masters) not loaded")
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8001)
