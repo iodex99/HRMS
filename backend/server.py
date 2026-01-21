@@ -53,6 +53,18 @@ audit_logs_collection = db["audit_logs"]
 import_batches_collection = db["import_batches"]
 auth_tokens_collection = db["auth_tokens"]
 
+# Module 2: Master Data Collections
+departments_collection = db["departments"]
+designations_collection = db["designations"]
+employee_types_collection = db["employee_types"]
+locations_collection = db["locations"]
+clients_collection = db["clients"]
+tasks_collection = db["tasks"]
+holidays_collection = db["holidays"]
+weekly_off_rules_collection = db["weekly_off_rules"]
+exit_support_functions_collection = db["exit_support_functions"]
+exit_checklist_items_collection = db["exit_checklist_items"]
+
 # Create indexes
 employees_collection.create_index([("employee_code", ASCENDING)], unique=True)
 employees_collection.create_index([("email", ASCENDING)])
