@@ -75,6 +75,18 @@ users_collection.create_index([("organization_id", ASCENDING)])
 auth_tokens_collection.create_index([("token", ASCENDING)], unique=True)
 auth_tokens_collection.create_index([("expires_at", ASCENDING)])
 
+# Module 2: Master Data Indexes
+departments_collection.create_index([("organization_id", ASCENDING)])
+departments_collection.create_index([("code", ASCENDING), ("organization_id", ASCENDING)])
+designations_collection.create_index([("organization_id", ASCENDING)])
+designations_collection.create_index([("code", ASCENDING), ("organization_id", ASCENDING)])
+locations_collection.create_index([("organization_id", ASCENDING)])
+locations_collection.create_index([("code", ASCENDING), ("organization_id", ASCENDING)])
+clients_collection.create_index([("organization_id", ASCENDING)])
+clients_collection.create_index([("code", ASCENDING), ("organization_id", ASCENDING)])
+holidays_collection.create_index([("organization_id", ASCENDING)])
+holidays_collection.create_index([("location_id", ASCENDING), ("year", ASCENDING)])
+
 # JWT Configuration
 JWT_SECRET_KEY = os.environ.get("JWT_SECRET_KEY", "your-secret-key-change-in-production-min-32-chars-long")
 JWT_ALGORITHM = os.environ.get("JWT_ALGORITHM", "HS256")
