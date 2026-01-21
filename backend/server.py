@@ -68,6 +68,11 @@ exit_checklist_items_collection = db["exit_checklist_items"]
 # Module 3: Calendar Collections
 calendar_snapshots_collection = db["calendar_snapshots"]
 
+# Module 4: Timesheet Collections
+timesheet_entries_collection = db["timesheet_entries"]
+timesheet_submissions_collection = db["timesheet_submissions"]
+leave_entries_collection = db["leave_entries"]  # Placeholder for leave module
+
 # Create indexes
 employees_collection.create_index([("employee_code", ASCENDING)], unique=True)
 employees_collection.create_index([("email", ASCENDING)])
