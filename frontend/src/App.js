@@ -1534,6 +1534,7 @@ function AppLayout() {
       case 'dashboard': return <DashboardPage />;
       case 'organizations': return <OrganizationsPage />;
       case 'employees': return <EmployeesPage />;
+      case 'masters': return <MastersPage />;
       case 'roles': return <RolesPage />;
       case 'reports': return <ReportsPage />;
       case 'audit': return <AuditPage />;
