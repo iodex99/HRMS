@@ -24,7 +24,7 @@ import uuid
 from enum import Enum
 
 # Initialize FastAPI
-app = FastAPI(title="HRMS - Complete System (Modules 1-4)")
+app = FastAPI(title="HRMS - Complete System (Modules 1-5)")
 
 # CORS Configuration
 app.add_middleware(
