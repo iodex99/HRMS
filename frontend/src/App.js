@@ -224,6 +224,7 @@ function Sidebar({ activePage, setActivePage, onClose }) {
     { id: 'dashboard', icon: Home, label: 'Dashboard', roles: ['SUPER_ADMIN', 'FIRM_ADMIN', 'EMPLOYEE'] },
     { id: 'organizations', icon: Building2, label: 'Organizations', roles: ['SUPER_ADMIN'] },
     { id: 'employees', icon: Users, label: 'Employees', roles: ['SUPER_ADMIN', 'FIRM_ADMIN', 'EMPLOYEE'] },
+    { id: 'masters', icon: Database, label: 'Master Data', roles: ['FIRM_ADMIN'] },
     { id: 'roles', icon: Shield, label: 'Roles & Permissions', roles: ['FIRM_ADMIN'] },
     { id: 'reports', icon: FileText, label: 'Reports', roles: ['FIRM_ADMIN'] },
     { id: 'audit', icon: Activity, label: 'Audit Logs', roles: ['FIRM_ADMIN'] },
