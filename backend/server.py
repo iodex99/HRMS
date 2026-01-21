@@ -73,6 +73,10 @@ timesheet_entries_collection = db["timesheet_entries"]
 timesheet_submissions_collection = db["timesheet_submissions"]
 leave_entries_collection = db["leave_entries"]  # Placeholder for leave module
 
+# Module 5: Leave Management Collections
+leave_applications_collection = db["leave_applications"]
+leave_balance_transactions_collection = db["leave_balance_transactions"]
+
 # Create indexes
 employees_collection.create_index([("employee_code", ASCENDING)], unique=True)
 employees_collection.create_index([("email", ASCENDING)])
