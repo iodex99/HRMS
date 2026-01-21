@@ -1,8 +1,16 @@
-# HRMS - Employee Master & Identity Foundation
+# HRMS - Enterprise HR Management System
 
-## Multi-Tenant HRMS System
+## Multi-Tenant HRMS System (Modules 1 & 2)
 
-This is a comprehensive, enterprise-grade HRMS (Human Resource Management System) built with FastAPI backend and React frontend. The system supports multi-tenancy where you (as super admin) can onboard multiple organizations (firms) who will manage their own employees.
+This is a comprehensive, enterprise-grade HRMS (Human Resource Management System) built with FastAPI backend and React frontend. The system supports multi-tenancy where you (as super admin) can onboard multiple organizations (firms) who will manage their own employees and master data.
+
+## Modules Implemented
+
+### ✅ Module 1: Employee Master & Identity Foundation
+Complete employee identity management with authentication, roles, and audit trails.
+
+### ✅ Module 2: Admin Masters & Reference Data Management
+Comprehensive master data management for all organizational reference data.
 
 ## Tech Stack
 
