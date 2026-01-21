@@ -1283,6 +1283,70 @@ function ChangeStatusModal({ employee, onClose, onSuccess }) {
 }
 
 // Placeholder Pages
+function MastersPage() {
+  const { user } = useAuth();
+  const [activeMaster, setActiveMaster] = useState('departments');
+  
+  const masterTypes = [
+    { id: 'departments', label: 'Departments', icon: Building2, fields: ['Description'], createFields: [] },
+    { id: 'designations', label: 'Designations', icon: Briefcase, fields: ['Description', 'Level'], createFields: [{name: 'level', label: 'Level', type: 'number'}] },
+    { id: 'locations', label: 'Locations', icon: MapPin, fields: ['City', 'State'], createFields: [{name: 'city', label: 'City'}, {name: 'state', label: 'State'}, {name: 'country', label: 'Country'}] },
+    { id: 'clients', label: 'Clients', icon: Users, fields: ['Contact Person'], createFields: [{name: 'contact_person', label: 'Contact Person'}, {name: 'contact_email', label: 'Contact Email', type: 'email'}] },
+  ];
+  
+  const activeMasterType = masterTypes.find(m => m.id === activeMaster);
+  
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold text-gray-900 mb-6">Master Data Management</h1>
+      
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        {/* Master Type Selector */}
+        <div className="lg:col-span-1">
+          <div className="bg-white rounded-lg border border-gray-200 p-4">
+            <h2 className="text-sm font-semibold text-gray-700 mb-4">Master Types</h2>
+            <nav className="space-y-1">
+              {masterTypes.map((master) => {
+                const Icon = master.icon;
+                const isActive = activeMaster === master.id;
+                return (
+                  <button
+                    key={master.id}
+                    onClick={() => setActiveMaster(master.id)}
+                    className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${
+                      isActive
+                        ? 'bg-bamboo-50 text-bamboo-700 font-medium'
+                        : 'text-gray-600 hover:bg-gray-50'
+                    }`}
+                    data-testid={`master-type-${master.id}`}
+                  >
+                    <Icon className="w-4 h-4" />
+                    <span>{master.label}</span>
+                  </button>
+                );
+              })}
+            </nav>
+          </div>
+        </div>
+        
+        {/* Master Data Content */}
+        <div className="lg:col-span-3">
+          {activeMasterType && (
+            <MasterListPage
+              masterType={activeMaster}
+              title={activeMasterType.label}
+              icon={activeMasterType.icon}
+              fields={activeMasterType.fields}
+              createFields={activeMasterType.createFields}
+              user={user}
+            />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function RolesPage() {
   return (
     <div className="p-6">
