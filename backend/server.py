@@ -1562,6 +1562,15 @@ try:
 except ImportError:
     print("Warning: Module 2 (Masters) not loaded")
 
+# ==================== MODULE 3: CALENDAR & WEEKLY-OFF ENGINE ====================
+
+# Import and register Module 3 routes
+try:
+    from module3_calendar import register_calendar_routes
+    register_calendar_routes(app, db, get_current_user, require_firm_admin)
+except ImportError:
+    print("Warning: Module 3 (Calendar) not loaded")
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8001)
