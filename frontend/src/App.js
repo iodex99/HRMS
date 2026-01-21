@@ -3,9 +3,10 @@ import {
   User, Users, Building2, Settings, LogOut, Menu, X, Search, Plus,
   ChevronRight, Mail, Phone, Calendar, MapPin, Briefcase, Edit2, 
   Trash2, Eye, EyeOff, Download, Upload, Shield, FileText, Activity,
-  CheckCircle, XCircle, AlertCircle, Filter, RefreshCw, Home
+  CheckCircle, XCircle, AlertCircle, Filter, RefreshCw, Home, Database
 } from 'lucide-react';
 import './App.css';
+import { MasterListPage } from './MasterComponents';
 
 // API Configuration
 const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
