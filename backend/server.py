@@ -65,6 +65,9 @@ weekly_off_rules_collection = db["weekly_off_rules"]
 exit_support_functions_collection = db["exit_support_functions"]
 exit_checklist_items_collection = db["exit_checklist_items"]
 
+# Module 3: Calendar Collections
+calendar_snapshots_collection = db["calendar_snapshots"]
+
 # Create indexes
 employees_collection.create_index([("employee_code", ASCENDING)], unique=True)
 employees_collection.create_index([("email", ASCENDING)])
